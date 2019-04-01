@@ -16,7 +16,7 @@ while userContinue == True:
     webPage = requests.get('https://www.dictionary.com/browse/' + str(word))
     meaningSoup = bs(webPage.text,'html.parser')
 
-    rawMeaning = meaningSoup.find(class_='one-click-content css-1e3ziqc e1q3nk1v4')
+    rawMeaning = meaningSoup.find(class_='one-click-content css-98tqe9 e1q3nk1v4')
 
     if rawMeaning == None:
         print('Word not found in dictionary.\n')
@@ -50,7 +50,7 @@ while userContinue == True:
     else:
         meaning = rawMeaning.get_text()
         print('\n' + str(meaning) + '\n')
-        print('Would you like to find know urbanDictionary definition, probably more meaningful?\n ------------------------- ')
+        print('Would you like to continue searching for word meanings?\n ------------------------- ')
         cont = input('Y or N:\n')
         cont = cont.lower()
         if cont == 'y':
@@ -61,4 +61,3 @@ while userContinue == True:
         else:
             print('I think you made a typo?\n\nSo try another word anyways :)\n')
             print('---------------\n')
-
